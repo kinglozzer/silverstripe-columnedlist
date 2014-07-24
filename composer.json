@@ -1,0 +1,23 @@
+{
+	"name": "kinglozzer/silverstripe-columnedlist",
+	"description": "An SS_ListDecorator to facilitate stacking data vertically in columns",
+	"type": "silverstripe-module",
+	"homepage": "https://github.com/kinglozzer/silverstripe-columnedlist",
+	"keywords": ["silverstripe", "columned", "list", "columns", "stacking", "arraydata", "arraylist", "datalist"],
+	"authors": [
+		{
+			"name": "Loz Calver",
+			"email": "lozcalver@bigfork.co.uk"
+		}
+	],
+	"license": "BSD-3-Clause",
+	"support": {
+		"issues": "https://github.com/kinglozzer/silverstripe-columnedlist/issues"
+	},
+	"require": {
+		"silverstripe/framework": "~3.1"
+	},
+	"extra": {
+		"installer-name": "columnedlist"
+	}
+}
