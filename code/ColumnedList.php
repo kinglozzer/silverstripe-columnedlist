@@ -39,9 +39,17 @@ class ColumnedList extends SS_ListDecorator {
 		$result  = new ArrayList();
 
 		foreach($stacked as $list) {
+			$firstlast = '';
+			if($list == $stacked->First()) {
+				$firstlast = 'first';
+			} else if($list == $stacked->Last()) {
+				$firstlast = 'last';
+			}
+
 			$list = self::create($list);
 			$result->push(new ArrayData(array(
-				$children => $list
+				$children => $list,
+				'FirstLast' => $firstlast
 			)));
 		}
 
