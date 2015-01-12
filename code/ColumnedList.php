@@ -11,16 +11,19 @@ class ColumnedList extends SS_ListDecorator {
 		$list = $this->list->toArray();
 		$total = count($list);
 		$partLength = floor($total / $columns);
-		$partsRemaining = $total % $columns;
+		$remainder = $total % $columns;
 		$result = array();
 		$offset = 0;
 		
+		// Loop over the number of columns
 		for($i = 0; $i < $columns; $i++) {
-			$handlingRemaining = ($leftHeavy) ? ($i < $partsRemaining) : ($i >= $partsRemaining - 1);
-			$sliceLength = ($handlingRemaining) ? $partLength + 1 : $partLength;
+			$handlingRemainder = ($leftHeavy) ? ($i < $remainder) : ($i >= $columns - $remainder);
+
+			$sliceLength = ($handlingRemainder) ? $partLength + 1 : $partLength;
 			$column = array_slice($list, $offset, $sliceLength);
-			$result[$i] = new ArrayList($column);
 			$offset += $sliceLength;
+
+			$result[$i] = new ArrayList($column);
 		}
 
 		return $result;

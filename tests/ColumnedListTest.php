@@ -93,6 +93,32 @@ class ColumnedListTest extends SapphireTest {
 	}
 
 	/**
+	 * Check breaking into "right-heavy" columns with remainder works as expected:
+	 * | 1 | 2 | 3 | 5 |
+	 * | _ | _ | 4 | 6 |
+	 * 
+	 * @return void
+	 */
+	public function testStackRightHeavyWithRemainderEven() {
+		$data = ArrayList::create(array(
+			array('ID' => 1), array('ID' => 2), array('ID' => 3), array('ID' => 4), array('ID' => 5), array('ID' => 6)
+		));
+
+		$columnedList = ColumnedList::create($data);
+		$stacked = $columnedList->stack(4, false);
+		
+		$this->assertEquals(4, count($stacked));
+		$this->assertEquals(array('ID' => 1), $stacked[0]->offsetGet(0));
+		$this->assertNull($stacked[0]->offsetGet(1));
+		$this->assertEquals(array('ID' => 2), $stacked[1]->offsetGet(0));
+		$this->assertNull($stacked[1]->offsetGet(1));
+		$this->assertEquals(array('ID' => 3), $stacked[2]->offsetGet(0));
+		$this->assertEquals(array('ID' => 4), $stacked[2]->offsetGet(1));
+		$this->assertEquals(array('ID' => 5), $stacked[3]->offsetGet(0));
+		$this->assertEquals(array('ID' => 6), $stacked[3]->offsetGet(1));
+	}
+
+	/**
 	 * Test the template method returns expected data.
 	 * 
 	 * @return void
