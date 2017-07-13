@@ -9,24 +9,23 @@ An `SS_ListDecorator` to facilitate stacking data vertically in columns. Support
 ```php
 class Page_Controller extends Controller
 {
-	public function ColumnData()
+    public function ColumnData()
     {
-		return ColumnedList::create($this->SomeDataList());
-	}
-
+        return ColumnedList::create($this->SomeDataList());
+    }
 }
 ```
 
 ```php
 <% loop ColumnData.Stacked(3) %>
-	<div style="float: left">
-		<h3>Column {$Pos}</h3>
-		<ul>
-			<% loop Children %>
-				<li>Item {$Pos}</li>
-			<% end_loop %>
-		</ul>
-	</div>
+    <div style="float: left">
+        <h3>Column {$Pos}</h3>
+        <ul>
+            <% loop Children %>
+                <li>Item {$Pos}</li>
+            <% end_loop %>
+        </ul>
+    </div>
 <% end_loop %>
 ```
 
