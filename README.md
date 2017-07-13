@@ -34,7 +34,7 @@ Assuming `SomeDataList()` contains 5 items, the output would be:
 Column 1 | Column 2 | Column 3
 --- | --- | ---
 Item 1 | Item 3 | Item 5
-Item 2 | Item 4 | -
+Item 2 | Item 4 |  
 
 ## “Right-heavy” stacking:
 
@@ -58,4 +58,4 @@ Assuming `SomeDataList()` contains 5 items, the output would be:
 Column 1 | Column 2 | Column 3
 --- | --- | ---
 Item 1 | Item 2 | Item 4
-- | Item 3 | Item 5
+  | Item 3 | Item 5
