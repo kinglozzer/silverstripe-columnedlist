@@ -1,15 +1,16 @@
-#ColumnedList#
+# ColumnedList
 
 [![Build Status](https://travis-ci.org/kinglozzer/silverstripe-columnedlist.png?branch=master)](https://travis-ci.org/kinglozzer/silverstripe-columnedlist)
 
 An `SS_ListDecorator` to facilitate stacking data vertically in columns. Supports left and right “weighting”.
 
-##Example:##
+## Example:
 
 ```php
-class Page_Controller extends Controller {
-	
-	public function ColumnData() {
+class Page_Controller extends Controller
+{
+	public function ColumnData()
+    {
 		return ColumnedList::create($this->SomeDataList());
 	}
 
@@ -36,7 +37,7 @@ Column 1 | Column 2 | Column 3
 Item 1 | Item 3 | Item 5
 Item 2 | Item 4 | 
 
-##“Right-heavy” stacking:##
+## “Right-heavy” stacking:
 
 Using the same above example:
 
