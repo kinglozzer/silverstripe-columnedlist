@@ -29,5 +29,7 @@
         "psr-4": {
             "Kinglozzer\\SilverStripeColumnedList\\Tests\\": "tests/"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
