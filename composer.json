@@ -1,7 +1,7 @@
 {
 	"name": "kinglozzer/silverstripe-columnedlist",
 	"description": "An SS_ListDecorator to facilitate stacking data vertically in columns",
-	"type": "silverstripe-module",
+	"type": "silverstripe-vendormodule",
 	"homepage": "https://github.com/kinglozzer/silverstripe-columnedlist",
 	"keywords": ["silverstripe", "columned", "list", "columns", "stacking", "arraydata", "arraylist", "datalist"],
 	"authors": [
@@ -15,9 +15,19 @@
 		"issues": "https://github.com/kinglozzer/silverstripe-columnedlist/issues"
 	},
 	"require": {
-		"silverstripe/framework": "~3.1"
+		"silverstripe/framework": "^4"
 	},
-	"extra": {
-		"installer-name": "columnedlist"
-	}
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kinglozzer\\SilverStripeColumnedList\\": "code/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kinglozzer\\SilverStripeColumnedList\\Tests\\": "tests/"
+        }
+    }
 }
