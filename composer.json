@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Kinglozzer\\SilverStripeColumnedList\\": "code/"
+            "Kinglozzer\\SilverStripeColumnedList\\": "src/"
         }
     },
     "autoload-dev": {
